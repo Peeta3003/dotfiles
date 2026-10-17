@@ -26,6 +26,7 @@ return {
 			{ "<leader>h", group = "git hunks", mode = { "n", "v" } },
 			{ "<leader>t", group = "toggle" },
 			{ "<leader>c", group = "code" },
+			{ "<leader>b", group = "buffer" },
 		},
 	},
 	keys = {

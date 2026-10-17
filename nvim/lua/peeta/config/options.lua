@@ -10,8 +10,8 @@ opt.fillchars = { eob = " " }
 opt.winborder = "rounded"
 
 -- Editing behavior
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.breakindent = true
@@ -50,9 +50,11 @@ opt.splitbelow = true
 opt.clipboard = "unnamedplus"
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
-opt.foldlevelstart = 99      -- open all folds by default
+opt.foldlevelstart = 99 -- open all folds by default
 
 -- Quick highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
-  callback = function() vim.hl.on_yank() end,
+	callback = function()
+		vim.hl.on_yank()
+	end,
 })

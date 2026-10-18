@@ -15,7 +15,6 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.breakindent = true
-opt.formatoptions:remove({ "c", "r", "o" })
 opt.iskeyword:append("-")
 opt.mouse = "a" -- "" mouse support ("" to disable)
 opt.confirm = true
@@ -56,5 +55,12 @@ opt.foldlevelstart = 99 -- open all folds by default
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
 		vim.hl.on_yank()
+	end,
+})
+
+-- Stop comments from continuing on new lines
+vim.api.nvim_create_autocmd("FileType", {
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
 	end,
 })

@@ -1,0 +1,52 @@
+set background=dark
+
+syntax on
+filetype plugin indent on
+
+" UI
+set number
+set relativenumber
+set cursorline
+set listchars=tab:>\ ,trail:-,nbsp:+
+silent! set fillchars+=eob:\
+silent! set winborder=rounded
+
+" Editing behavior
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set smartindent
+set breakindent
+set iskeyword+=-
+set mouse=a
+set confirm
+
+" Scrolling and navigation
+set nowrap
+set scrolloff=4
+set sidescrolloff=4
+set signcolumn=auto
+set termguicolors
+
+" Search and replace
+set ignorecase
+set smartcase
+set incsearch
+set nohlsearch
+
+" Files and backups
+set undofile
+set noswapfile
+set undolevels=10000
+set autoread
+set autowrite
+set nobackup
+set nowritebackup
+
+" Misc
+set updatetime=250
+set splitright
+set splitbelow
+set clipboard=unnamedplus
+set foldmethod=indent
+set foldlevelstart=99

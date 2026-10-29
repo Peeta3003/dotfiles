@@ -10,19 +10,21 @@ local keys = {
 -- Czech keyboard: unshifted number row, in order 1..9
 local czech_row = { "+", "ě", "š", "č", "ř", "ž", "ý", "á", "í" }
 
+local function go_to(i)
+	return function()
+		require("bufferline").go_to(i, true)
+	end
+end
+
 for i = 1, 9 do
-	-- plain digits (US layout, or Czech with shift)
-	table.insert(keys, {
-		"<leader>" .. i,
-		"<cmd>BufferLineGoToBuffer " .. i .. "<cr>",
-		desc = "Go to buffer " .. i,
-	})
-	-- Czech number row without shift
-	table.insert(keys, {
-		"<leader>" .. czech_row[i],
-		"<cmd>BufferLineGoToBuffer " .. i .. "<cr>",
-		desc = "Go to buffer " .. i,
-	})
+	-- plain digits (US layout, or Czech with shift) and the Czech unshifted number row
+	for _, key in ipairs({ tostring(i), czech_row[i] }) do
+		table.insert(keys, {
+			"<leader>" .. key,
+			go_to(i),
+			desc = "Go to buffer " .. i,
+		})
+	end
 end
 
 return {

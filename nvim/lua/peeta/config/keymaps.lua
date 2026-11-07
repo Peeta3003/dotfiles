@@ -18,3 +18,7 @@ map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
+
+-- Keep visual selection after indenting
+map("v", "<", "<gv")
+map("v", ">", ">gv")
